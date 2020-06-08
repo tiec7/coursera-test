@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app='Mod1App'>
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .font-italic { font-style: italic; }
+      .color-green { color: green; }
+      .color-red { color: red; }
+      .border-green { border: 1px solid green; }
+      .border-red { border: 1px solid red; }
+    </style>
+  </head>
+<body ng-controller='LunchCheckController'>
+   <div class="container">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <p class="font-italic">Please note: empty items, i.e. item1,item2, ,item3 will NOT be considered!</p>
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control"
+             ng-model="lunchList"
+             ng-class="{'border-red': messageStatus === 'Error', 'border-green': messageStatus === 'Fine'}">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="checkLunch()">Check If Too Much</button>
+         </div>
+         <div class="form-group message" 
+              ng-class="{'color-red': messageStatus === 'Error', 'color-green': messageStatus === 'Fine'}">
+           {{message}}
+         </div>
+   </div>
+
+</body>
+</html>
