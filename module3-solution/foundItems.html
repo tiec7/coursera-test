@@ -1,0 +1,22 @@
+<div class="directive-container">
+    <ol>
+        <!-- this li should have .flex class, but if i add it, numbering disappears -->
+        <li class="item" ng-repeat="item in foundItemsDirCtrl.items">
+            <div class="flex item-desc">
+                {{ item.name }} <br>
+                {{ item.short_name }} <br>
+                {{ item.description }} 
+            </div>  
+            
+            <div class="flex item-button">
+                <button ng-click="foundItemsDirCtrl.onRemove({index: $index});">Don't want this one!</button>
+            </div>
+            
+        </li>
+        
+    </ol>
+</div>
+
+<div class="my-warning alert alert-warning" ng-if="foundItemsDirCtrl.items.length === 0 || foundItemsDirCtrl.items.length === undefined">
+    {{ foundItemsDirCtrl.myWarning }}
+</div>
