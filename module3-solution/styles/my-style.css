@@ -29,3 +29,12 @@
     align-self: center;
     margin-left: 10px;
 }
+
+.italic {
+    font-style: italic;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
