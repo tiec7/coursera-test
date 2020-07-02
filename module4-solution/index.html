@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app=''>
+<html ng-app='MenuApp'>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
@@ -9,29 +9,38 @@
     <script src="lib/angular-ui-router.min.js"></script>
 
     <!-- Modules -->
-    <!-- <script src="src/shoppinglist/shoppinglist.module.js"></script>
-    <script src="src/spinner/spinner.module.js"></script> -->
+    <script src="src/menuapp/menuapp.module.js"></script>
+    <script src="src/menuapp/data.module.js"></script>
+    
+    
+
+    <!-- <script src="src/spinner/spinner.module.js"></script> -->
 
     <!-- Routes -->
-    <!-- <script src="src/routes.js"></script> -->
+    <script src="src/routes.js"></script>
 
     <!-- 'ShoppingList' module artifacts -->
+    <script src="src/menuapp/categories.component.js"></script>
+    <script src="src/menuapp/items.component.js"></script>
+    
+    <script src="src/menuapp/main-categories.controller.js"></script>
     <!-- <script src="src/shoppinglist/shoppinglist.component.js"></script>
     <script src="src/shoppinglist/main-shoppinglist.controller.js"></script>
-    <script src="src/shoppinglist/shoppinglist.service.js"></script>
-    <script src="src/shoppinglist/item-detail.controller.js"></script> -->
+    <script src="src/shoppinglist/shoppinglist.service.js"></script>-->
+    <script src="src/menuapp/item-detail.controller.js"></script> 
+    <script src="src/menuapp/menudata.service.js"></script>
 
     <!-- 'Spinner' module artifacts -->
     <!-- <script src="src/spinner/loadingspinner.component.js"></script> -->
 
-    <title>No Cookie Shopping List</title>
+    <title>Restaurant Menu</title>
   </head>
   <body>
-    <h1>Welcome to Premade No Cookie Shopping List</h1>
+    <h1>Welcome to the Menu App!</h1>
 
-    <!-- <ui-view></ui-view>
+    <ui-view></ui-view>
 
-    <loading-spinner></loading-spinner> -->
+    <!-- <loading-spinner></loading-spinner> -->
 
     
 

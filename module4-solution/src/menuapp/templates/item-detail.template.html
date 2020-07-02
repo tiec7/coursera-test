@@ -1,0 +1,29 @@
+<h3> Details for category {{ $ctrl.categoriesdetail.category.name }} : </h3>
+
+<ul>
+    <li ng-repeat="element in $ctrl.categoriesdetail.menu_items">
+        <div>
+            <h4>{{ element.short_name }} - {{ element.name }}</h4>
+            <p ng-if="element.description != ''">
+                {{ element.description }}
+            </p>
+
+            <p ng-if="element.description == ''">
+                Description not available for this item!
+            </p>
+        </div>
+        
+        <div>
+            <span> price: {{ element.price_large }}</span>
+        </div>
+        
+    </li>
+</ul>
+
+
+
+<!-- full data received
+ {{ $ctrl.categoriesdetail.category.name }}
+<br>
+ {{ $ctrl.categoriesdetail.menu_items }}
+-->
