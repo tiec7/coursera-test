@@ -1,0 +1,12 @@
+<!--  {{ $ctrl.categorieslist }} -->
+<ul>
+    <!-- ui-sref="state name used for calling the function of the service( { name i want to use : property of the category i want to send to the function } ) -->
+    <!-- <li ng-repeat="category in $ctrl.categoriesList" ui-sref="categories.itemDetail({categoryShortName: category.short_name})"> -->
+    <li ng-repeat="category in $ctrl.categoriesList" ui-sref="itemDetail({categoryShortName: category.short_name})">
+        {{ category.name }}
+    </li>
+</ul>
+
+<!-- <item-detail categoriesdetail="itemDetailCtrl.itemListOfCategory"></item-detail> -->
+
+<!-- <ui-view></ui-view> -->
