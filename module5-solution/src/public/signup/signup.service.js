@@ -2,10 +2,10 @@
     'use strict'
 
     angular.module('public')
-    .service('MyInfoService', MyInfoService);
+    .service('SignUpService', SignUpService);
 
-    MyInfoService.$inject = ['ApiPath', '$http'];
-    function MyInfoService(ApiPath, $http) {
+    SignUpService.$inject = ['ApiPath', '$http'];
+    function SignUpService(ApiPath, $http) {
         var service = this;
 
         // stores user data
@@ -18,7 +18,7 @@
                 url: (ApiPath + '/menu_items/' + shortNameSearched + '.json')
             })
             .then(function success(response) {
-                console.log("service: searched shortname: " , response.data);
+                //console.log("service: searched shortname: " , response.data);
                 response.myResult = "Dish found!";
 
                 return response;

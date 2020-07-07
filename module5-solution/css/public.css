@@ -113,7 +113,7 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
-/* MY INFO PAGE */
+/* SIGNUP PAGE */
 input {
   font-size: 24px;
   margin-bottom: 10px;
@@ -136,6 +136,20 @@ button {
 #info {
   margin-top: 20px;
 }
+
+legend {
+  color: #fff;
+}
+
+.success-save {
+  margin: 15px auto;
+  padding: 5px;
+  text-align: center;
+}
+/* END SIGNUP PAGE */
+
+/* MY INFO PAGE */
+
 /* END MY INFO PAGE */
 
 /********** Large devices only **********/

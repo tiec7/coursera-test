@@ -1,0 +1,78 @@
+<fieldset>
+    <legend>Registration</legend>
+    <form name='regForm' novalidate>
+
+        <!-- Name -->
+        <input type="text" name="name" placeholder="Insert your name"
+        ng-model="signUpCtrl.reg.user.name"
+        required
+        minlength="2"
+        ng-maxlength="10">
+        {{ signUpCtrl.reg.user.name }}
+        <span
+            ng-if="(regForm.name.$error.minlength || regForm.name.$error.required) && regForm.name.$touched">
+            Name must be at least 2 characters long
+        </span>
+        <span ng-if="regForm.name.$error.maxlength && regForm.name.$touched">
+            Name must not be longer than 10 characters
+        </span>
+        <br>
+
+        <!-- Last Name -->
+        <input type="text" name="lastname" placeholder="Insert your last name"
+        ng-model="signUpCtrl.reg.user.lastname"
+        required
+        minlength="3"
+        ng-maxlength="20">
+        {{ signUpCtrl.reg.user.lastname }}
+        <span
+          ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+          Last name must be at least 3 characters long
+        </span>
+        <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+          Last name must not be longer than 20 characters
+        </span>
+        <br>
+
+        <!-- Email -->
+        <input type="email" name="email" placeholder="Email"
+        ng-model="signUpCtrl.reg.user.email"
+        required>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+        <!-- Phone number -->
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="signUpCtrl.reg.user.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+        </span>
+        <br>
+
+        <!-- Favorite Dish -->
+        <input type="text" name="favdish" placeholder="Insert your favorite dish number menu"
+        ng-model="signUpCtrl.reg.user.favoriteDish">
+        <!-- {{ reg.user.favoriteDish }} -->
+        <!-- <span ng-if="regForm.favoriteDish.$touched"> -->
+        <span ng-if="signUpCtrl.dishChecked ">
+            {{ signUpCtrl.foundComment }}
+        </span>
+         <br>
+
+        <button
+            ng-disabled="regForm.$invalid"
+            ng-click="signUpCtrl.submit(signUpCtrl.reg.user.favoriteDish)">Submit
+        </button>
+
+        <div class="success-save" ng-if="signUpCtrl.isUserDataSaved">
+            Your information has been successfully saved!
+        </div>
+
+        <!-- <div style="margin-top: 10px;">
+          Form valid? {{ regForm.$valid }}
+        </div> -->
+    </form>
+  </fieldset>
